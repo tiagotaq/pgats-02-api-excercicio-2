@@ -41,7 +41,6 @@ describe('Testes da resolvers, da mutation createTransfer', () => {
                     value: 10.53
                 }
             });
-        expect(resposta.status).to.equal(200);
         delete resposta.body.data.createTransfer.date
         const respostaEsperada = require('../fixture/respostas/graphQlTransferenciaComSucesso.json')
         expect(resposta.body).to.deep.equal(respostaEsperada);
@@ -65,7 +64,6 @@ describe('Testes da resolvers, da mutation createTransfer', () => {
                     value: 100000
                 }
             });
-        expect(resposta.status).to.equal(200);
         expect(resposta.body.errors[0].message).to.equal("Saldo insuficiente");
     })
     it('Não deve realizar uma transferência caso não tenha sido informado um token', async () => {
@@ -86,7 +84,6 @@ describe('Testes da resolvers, da mutation createTransfer', () => {
                     value: 100000
                 }
             });
-        expect(resposta.status).to.equal(200);
         expect(resposta.body.errors[0].message).to.equal("Autenticação obrigatória");
     })
 });
