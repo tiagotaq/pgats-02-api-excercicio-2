@@ -8,13 +8,13 @@ describe('Testes da resolvers - mutation createTransfer', () => {
             .post('')
             .send({
                 query: `mutation LoginUser($username: String!, $password: String!) {
-                                loginUser(username: $username, password: $password) {
-                                    user {
-                                        username
-                                    }
-                                    token
+                            loginUser(username: $username, password: $password) {
+                                user {
+                                    username
                                 }
-                            }`,
+                                token
+                            }
+                        }`,
                 variables: {
                     username: "julio",
                     password: "123456"
