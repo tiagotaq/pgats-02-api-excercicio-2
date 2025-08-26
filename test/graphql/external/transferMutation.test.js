@@ -2,10 +2,10 @@
 const request = require('supertest');
 const { expect } = require('chai');
 
-describe('Testes da resolvers, da mutation createTransfer', () => {
+describe('Testes da resolvers - mutation createTransfer', () => {
     before(async () => {
         const respostaLogin = await request('http://localhost:4000/graphql')
-            .post('/')
+            .post('')
             .send({
                 query: `mutation LoginUser($username: String!, $password: String!) {
                                 loginUser(username: $username, password: $password) {
