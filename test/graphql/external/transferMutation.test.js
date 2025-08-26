@@ -84,5 +84,5 @@ describe('Testes da resolvers - mutation createTransfer', () => {
             });
         expect(resposta.body.errors[0].message).to.equal("Autenticação obrigatória")
     })
-});
+})
 
