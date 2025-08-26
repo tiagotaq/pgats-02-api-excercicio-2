@@ -29,7 +29,6 @@ describe('Testes da resolvers - mutation createTransfer', () => {
             .send({
                 query: `mutation Mutation($from: String!, $to: String!, $value: Float!) {
                             createTransfer(from: $from, to: $to, value: $value) {
-                                date
                                 from
                                 to
                                 value
@@ -41,7 +40,6 @@ describe('Testes da resolvers - mutation createTransfer', () => {
                     value: 10.53
                 }
             });
-        delete resposta.body.data.createTransfer.date
         const respostaEsperada = require('../fixture/respostas/graphQlTransferenciaComSucesso.json')
         expect(resposta.body).to.deep.equal(respostaEsperada);
     })
