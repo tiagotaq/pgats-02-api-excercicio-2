@@ -20,7 +20,7 @@ describe('Testes da resolvers - mutation createTransfer', () => {
                     password: "123456"
                 }
             });
-        token = respostaLogin.body.data.loginUser.token;
+        token = respostaLogin.body.data.loginUser.token
     })
     it('Deve realizar uma transferência com sucesso', async () => {
         const resposta = await request('http://localhost:4000/graphql')
@@ -41,7 +41,7 @@ describe('Testes da resolvers - mutation createTransfer', () => {
                 }
             });
         const respostaEsperada = require('../fixture/respostas/graphQlTransferenciaComSucesso.json')
-        expect(resposta.body).to.deep.equal(respostaEsperada);
+        expect(resposta.body).to.deep.equal(respostaEsperada)
     })
     it('Não deve realizar uma transferência de um valor maior que o saldo do usuário', async () => {
         const resposta = await request('http://localhost:4000/graphql')
@@ -62,7 +62,7 @@ describe('Testes da resolvers - mutation createTransfer', () => {
                     value: 100000
                 }
             });
-        expect(resposta.body.errors[0].message).to.equal("Saldo insuficiente");
+        expect(resposta.body.errors[0].message).to.equal("Saldo insuficiente")
     })
     it('Não deve realizar uma transferência caso não tenha sido informado um token', async () => {
         const resposta = await request('http://localhost:4000/graphql')
@@ -82,7 +82,7 @@ describe('Testes da resolvers - mutation createTransfer', () => {
                     value: 100000
                 }
             });
-        expect(resposta.body.errors[0].message).to.equal("Autenticação obrigatória");
+        expect(resposta.body.errors[0].message).to.equal("Autenticação obrigatória")
     })
 });
 
